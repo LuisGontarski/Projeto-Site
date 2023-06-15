@@ -17,12 +17,12 @@
             </div>
             <div class="nav-list">
                 <ul>
-                    <li class="nav-item" style="background-color: #1c1c1c; padding: 10px; border-radius: 10px;"><a href="cadastro.html" class="nav-link" style="background-color: #1c1c1c;">Cadastre-se</a></li>
+                    <li class="nav-item" style="background-color: #1c1c1c; padding: 10px; border-radius: 10px;"><a href="cadastro.php" class="nav-link" style="background-color: #1c1c1c;">Cadastre-se</a></li>
                     <li class="nav-item" style="background-color: #1c1c1c; padding: 10px; border-radius: 10px;"><a href="#" class="nav-link" style="background-color: #1c1c1c;">Pesquisar</a></li>
                 </ul>
             </div>
             <div class="login-button">
-                <button><a href="login.html" style="background-color: #1c1c1c;">Entrar</a></button>
+                <button><a href="login.php" style="background-color: #1c1c1c;">Entrar</a></button>
             </div>
 
             <div class="mobile-menu-icon">
@@ -31,12 +31,12 @@
         </nav>
         <div class="mobile-menu">
             <ul>
-                <li class="nav-item"><a href="cadastro.html" class="nav-link">Cadastre-se</a></li>
+                <li class="nav-item"><a href="cadastro.php" class="nav-link">Cadastre-se</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Pesquisar</a></li>
             </ul>
 
             <div class="login-button">
-                <button><a href="login.html" style="background-color: #1c1c1c;">Entrar</a></button>
+                <button><a href="login.php" style="background-color: #1c1c1c;">Entrar</a></button>
             </div>
         </div>
     </header>

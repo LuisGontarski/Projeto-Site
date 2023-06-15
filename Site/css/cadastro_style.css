@@ -132,10 +132,11 @@ body {
   
   .signup-box {
     width: 360px;
-    height: 530px;
+    height: auto;
     margin: auto;
     background-color: white;
     border-radius: 3px;
+    padding: 20px;
   }
   
   .login-box {
@@ -173,7 +174,7 @@ body {
     border-radius: 6px;
     outline: none;
   }
-  input[type="button"] {
+  input[type="submit"] {
     width: 320px;
     height: 35px;
     margin-top: 20px;

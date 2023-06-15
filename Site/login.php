@@ -1,3 +1,41 @@
+<?php
+    session_start();
+    if(isset($_SESSION['error'])) {
+        echo '<script>alert("'.$_SESSION['error'].'");</script>';
+        unset($_SESSION['error']);
+    }
+
+    if(isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha'])) {
+        include_once('conexao.php');
+        $nome = $_POST['nome'];
+        $senha = $_POST['senha'];
+
+        $sql = "SELECT * FROM `tb_usuario` WHERE login = '$login' and ID_TipoUsu = '$tipoUsuario'";
+
+        $result = $conexao->query($sql);
+        $usuario = $result->fetch_assoc();
+
+        if(md5($senha) === $usuario['Senha']) {
+            if ($_POST['escolha'] == 1){
+                $_SESSION['login'] = $login;
+                header('Location: sistema.php');
+            }
+            elseif ($_POST['escolha'] == 2){
+                $_SESSION['login'] = $login;
+                header('Location: locadorPerfil.php');
+            }
+        }
+        else{
+            $_SESSION['error'] = 'Usuário ou senha incorretos.';
+            header('Location: login.php');
+        }
+    }
+    else
+    {
+        header('Location: login.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -13,7 +51,7 @@
     <header>
         <nav class="nav-bar">
             <div class="logo">
-                <h1><a href="principal.html" style="text-decoration: none; color: white;">JPrendim</a></h1>
+                <h1><a href="principal.php" style="text-decoration: none; color: white;">JPrendim</a></h1>
             </div>
             <div class="nav-list">
                 <ul>
@@ -53,7 +91,7 @@
         </form>
     </div>
     <p class="para-2">
-        Não tem uma conta? <a href="cadastro.html">Cadastre-se aqui</a>
+        Não tem uma conta? <a href="cadastro.php">Cadastre-se aqui</a>
     </p>
     <script src="js/principal_script.js"></script>
 </body>
