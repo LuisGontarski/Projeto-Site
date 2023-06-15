@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     font-family: 'Inter', sans-serif;
+    background-color: #24252a;
 }
 
 header {
@@ -33,7 +34,7 @@ header {
     justify-content: center;
     list-style: none;
     margin-left: 0px;
-    margin-right: 100px;
+    margin-right: 60px;
 }
 
 .nav-item {
@@ -109,6 +110,7 @@ header {
     }
 }
 
+
 .container {
     text-align: center;
     margin-top: 100px;
@@ -116,12 +118,12 @@ header {
   
   .container h1 {
     font-size: 30px;
-    color: #333;
+    color: white;
   }
   
   .container .description {
     font-size: 18px;
-    color: #24252a;
+    color: white;
     margin-top: 24px;
   }
   
