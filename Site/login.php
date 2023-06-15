@@ -4,36 +4,6 @@
         echo '<script>alert("'.$_SESSION['error'].'");</script>';
         unset($_SESSION['error']);
     }
-
-    if(isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha'])) {
-        include_once('conexao.php');
-        $nome = $_POST['nome'];
-        $senha = $_POST['senha'];
-
-        $sql = "SELECT * FROM `tb_usuario` WHERE login = '$login' and ID_TipoUsu = '$tipoUsuario'";
-
-        $result = $conexao->query($sql);
-        $usuario = $result->fetch_assoc();
-
-        if(md5($senha) === $usuario['Senha']) {
-            if ($_POST['escolha'] == 1){
-                $_SESSION['login'] = $login;
-                header('Location: sistema.php');
-            }
-            elseif ($_POST['escolha'] == 2){
-                $_SESSION['login'] = $login;
-                header('Location: locadorPerfil.php');
-            }
-        }
-        else{
-            $_SESSION['error'] = 'Usuário ou senha incorretos.';
-            header('Location: login.php');
-        }
-    }
-    else
-    {
-        header('Location: login.php');
-    }
 ?>
 
 <!DOCTYPE html>
@@ -81,13 +51,12 @@
     <br><br><br><br><br>
     <div class="login-box">
         <h1>Login</h1>
-        <form>
+        <form action="testaLogin.php" method="post">
             <label>Email</label>
-            <input type="email" placeholder="" />
+            <input type="text" placeholder="" name="email" id="email"/>
             <label>Senha</label>
-            <input type="password" placeholder="" />
-            <input type="button" value="Entrar" />
-            <closeform></closeform>
+            <input type="password" placeholder="" name="senha" id="senha"/>
+            <input type="submit" value="Entrar" name="submit" id="submit"/>
         </form>
     </div>
     <p class="para-2">
