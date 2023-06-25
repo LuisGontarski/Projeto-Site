@@ -97,7 +97,7 @@ if (isset($_POST['submit'])) {
 
     </div>
     <p class="para-2">
-        Already have an account? <a href="login.php">Login here</a>
+        Já possui uma conta? <a href="login.php">Entre aqui</a>
     </p>
     <script src="js/principal_script.js"></script>
 </body>

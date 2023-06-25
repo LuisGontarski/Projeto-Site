@@ -16,6 +16,6 @@ if(isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha'])
             header('Location: principal.php');
         } else if (md5($senha) === $usuario['Senha'] and $sqlSelectTipo == 1){
             $_SESSION['email'] = $email;
-            header('Location: cadastro.php');
+            header('Location: perfil.php');
         }
     }
